@@ -1,0 +1,26 @@
+#ifndef MESSAGES_H
+#define MESSAGES_H
+#include "message_defs.h"
+
+enum TestMessages : alx::MessageIdType {
+    MESSAGE_ID_FIRST = 0,
+
+    TEST_IPC_CONNECTION,
+    TEST_IPC_DISCONNECTION,
+
+    TEST_IPC_BLOCK_REQ, 
+    TEST_IPC_BLOCK_RSP,
+
+    TEST_IPC_ASYNC_REQ,
+    TEST_IPC_ASYNC_RSP,
+
+    TEST_IPC_BLOCK_PUBLISH_REQ, 
+    TEST_IPC_BLOCK_PUBLISH_RSP,
+
+    TEST_IPC_ASYNC_PUBLISH_REQ,
+    TEST_IPC_ASYNC_PUBLISH_RSP,
+
+    MESSAGE_ID_LAST,
+};
+
+#endif

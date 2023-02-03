@@ -1,0 +1,37 @@
+# Copyright 2020 Continental AG and subsidiaries
+# Note: Keep formating of file consistent with current formating
+#
+# IMPORTANT: Also update LogFacilityUT.configuration with the same facilities
+#            but set all their severities to INFO (UT file)
+#
+#   Enum Value      Log print string    Development sev    Production sev
+#   ----------      ----------------    ---------------    --------------
+    // oem api
+    API,            "API",              INFO,              INFO
+    // services
+    Audio,          "Audio",            NOTE,              NOTE
+    Diag,           "DIAG",             INFO,              INFO
+    LogMgr,         "LMG",              INFO,              INFO
+    MobileMgr,      "MM",               INFO,              INFO
+    Power,          "PWR",              INFO,              INFO
+    SDB,            "SDB",              NOTICE,            NOTICE
+    SWLMgr,         "SWL",              NOTE,              NOTE
+    EthR,           "EthR",             INFO,              INFO
+    EventMgr,       "EvtMgr",           INFO,              INFO
+    VoiceMgr,       "VoiceMgr",         INFO,              INFO
+    FileMgr,        "FileMgr",          INFO,              INFO
+    IpMgr,          "IpMgr",            INFO,              INFO
+    CDL,            "CDL",              INFO,              INFO
+    LICTR,          "LICTR",            INFO,              INFO
+    FaultMgr,       "FM",               INFO,              INFO
+    AntennaMgr,     "AntennaMgr",       INFO,              INFO
+    AutonomousMgr,  "AuLogMgr",         INFO,              INFO
+    TimeMaster,     "TMM",              INFO,              INFO
+    LegacyApp,      "szk",              INFO,              INFO
+    FeatureMgr,     "FMgr",             INFO,              INFO
+    RemoteCtrl,     "RC",               INFO,              INFO
+    RemoteSrvc,     "RS",               INFO,              INFO
+    CfgMgr,         "CfgMgr",           INFO,              INFO
+    VoiceCall,      "Voice",            INFO,              INFO
+    ConnectedCore,  "ConnCore",         INFO,              INFO
+    TestIpcSample,  "TestIpcSample",    INFO,              INFO
