@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ -->
+    <ConsoleApplication appName="test-alx-ipc" appHelp="test-alx-ipc">
+        <CommandList>
+            <Command commandName="send_block_msg" argsAllowed="0" commandHelp="send_block_msg"/>
+            <Command commandName="send_async_msg" argsAllowed="0" commandHelp="send_async_msg"/>
+            <Command commandName="send_block_publish_msg" argsAllowed="0" commandHelp="send_block_publish_msg"/>
+            <Command commandName="send_async_publish_msg" argsAllowed="0" commandHelp="send_async_publish_msg"/>
+        </CommandList>
+    </ConsoleApplication>
+
+<!--  Use these commands
+-->

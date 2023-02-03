@@ -1,0 +1,13 @@
+00. go to igv7440u (client) working folder								                            : cd ~/.ssl2/
+01. create ca key-pair											                                    : openssl genrsa -out cakey.pem 4096
+02. use ca private key to create self-sign ca cert							                        : openssl req -new -x509 -days 3650 -key cakey.pem -out cacert.pem
+03. convert ca cert to PEM format									                                : openssl x509 -in cacert.pem -out cacert.pem -outform PEM
+04. create client key-pair										                                    : openssl genrsa -out clientkey.pem 4096
+05. use client private key to create client CSR request						                        : openssl req -new -key clientkey.pem -out client.csr
+06. ca receives CSR from client and create client cert signed by ca private key			            : openssl x509 -req -days 3650 -in client.csr -CA cacert.pem -CAkey cakey.pem -set_serial 01 -out clientcert.pem
+07. create server key-pair										                                    : openssl genrsa -out serverkey.pem 4096
+08. use server private key to create server CSR request						                        : openssl req -new -key serverkey.pem -out server.csr
+09. ca receives CSR from server and create server cert signed by ca private key			            : openssl x509 -req -days 3650 -in server.csr -CA cacert.pem -CAkey cakey.pem -set_serial 01 -out servercert.pem
+10. copy all server's and ca's files from igv7440u (client) to igd1946u (server) via ssh protocol   : scp server.csr serverkey.pem servercert.pem cakey.pem cacert.pem uif63571@igd1946u:/home/uif63571/.ssl2/
+11. on igd1946u (server), run the command (3000 is port number of igd1946u)				            : openssl s_server -accept 3000 -CAfile cacert.pem -cert servercert.pem -key serverkey.pem -state -Verify 10
+12. on igv7440u (client), run the command								                            : openssl s_client -connect igd1946u:3000 -key clientkey.pem -cert clientcert.pem -CAfile cacert.pem -state
